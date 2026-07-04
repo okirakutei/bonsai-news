@@ -7,7 +7,7 @@
 	<title>BONSAI-NEWS</title>
 	<style>
 		<!---DEF ダークモード--->
-		body.dark {
+		body {
 			background-color: #1a1a2e;
 			color: #e0e0e0;
 			font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
@@ -16,10 +16,10 @@
 			padding: 1rem;
 		}
 		<!---DEF ダークモード--->
-		body.dark h1 {color: #a0c4ff;}
-		body.dark h2 {color: #7fb3d3;}
-		body.dark a {color: #90caf9;	text-decoration: none;}
-		body.dark a:hover {text-decoration: underline;}
+		body h1 {color: #a0c4ff;}
+		body h2 {color: #7fb3d3;}
+		body a {color: #90caf9;	text-decoration: none;}
+		a:hover {text-decoration: underline;}
 		<!---DEF ライトモード--->
 		body.light {
 			background-color: #f5f5f5;
@@ -47,8 +47,8 @@
 <body>
 	<div>
 		<h1>わたし用のゆるいメモ&リンク置き場です。</h1>
-		<p>コスパの良い能動的リンク集をつくり、ニュース時事問題もろもろの情報収集をめざし、</p>
-		<p>気が向いたときにちょっとずつ育てる盆栽スタイルでいきます。どうぞよろしく～</p>
+		<p>コスパの良い能動的リンク集をつくり、ニュース時事問題もろもろの情報収集をめざし、<br>
+		気が向いたときにちょっとずつ育てる盆栽スタイルで更新していきます。</p>
 	</div>
 	<div id="priority">気になるもの(経済関連)</div>
 		<nav>
@@ -94,8 +94,8 @@
 		</nav>
 	<div id="UPDATES">更新履歴</div>
 	<p>2026/07/04-05 Copyright © 2026 okirakutei All rights reserved.</p>
+	<button id="toggle" onclick="
+		document.body.classList.toggle('light');
+		this.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';">☀️
+	</button>
 </body>
-<button id="toggle" onclick="
-	document.body.classList.toggle('light');
-	this.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';">☀️
-</button>
