@@ -1,0 +1,24 @@
+{
+  "categories": [
+    {
+      "name": "気になるもの(優先度高)",
+      "links": [
+        {
+          "title": "サイト名",
+          "url": "https://example.com",
+          "description": "説明文"
+        }
+      ]
+    },
+    {
+      "name": "メジャー信頼層",
+      "links": [
+        {
+          "title": "サイト名",
+          "url": "https://example.com",
+          "description": "説明文"
+        }
+      ]
+    }
+  ]
+}
