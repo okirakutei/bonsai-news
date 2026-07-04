@@ -6,6 +6,7 @@
 	<meta name="description" content="盆栽 育てるニュース"><!--検索結果などに表示-->
 	<title>BON-SAI NEWS</title>
 	<style>
+		<!---DEF ダークモード--->
 		body {
 			background-color: #1a1a2e;
 			color: #e0e0e0;
@@ -14,24 +15,47 @@
 			margin: 0;
 			padding: 1rem;
 		}
-		h1 {
-			color: #a0c4ff;
-		}
-		h2 {
-			color: #7fb3d3;
-		}
-		a:hover {
-			color: #90caf9;	text-decoration: none;
-		}
-		a:hover {
-			text-decoration: underline;
-		}
+		<!---DEF ダークモード--->
+		h1 {color: #a0c4ff;}
+		h2 {color: #7fb3d3;}
+		a {color: #90caf9;	text-decoration: none;}
+		a:hover {text-decoration: underline;}
 		body.light{
 			background-color: #f5f5f5;
 			color: #1a1a1a;
 		}
-	</style>
+		<!---DEF ライトモード--->
+		body.light {
+			background-color: #f5f5f5;
+			color: #1a1a1a;
+			font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+			max-width: 800px;
+			margin: 0;
+			padding: 1rem;
+		}
+		<!---DEF ライトモード--->
+		h1 {color: #1a3a6e;}
+		h2 {color: #2a5a8e;}
+		a {color: #1a6ab5;	text-decoration: none;}
+
+		/* 切り替えボタン */
+		#toggle {
+			position: fixed;
+			top: 1rem;
+			right: 1rem;
+			padding: 0.4rem 0.8rem;
+			cursor: pointer;
+			border: 1px solid #888;
+			border-radius: 4px;
+			background: transparent;
+			color: inherit;
+		}
+  	</style>
 </head>
+<button id="toggle" onclick="
+	document.body.classList.toggle('light');
+	this.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';">☀️
+</button>
 <body>
 	<div>
 		<h1>わたし用のゆるいメモ置き場です。</h1>
@@ -64,5 +88,5 @@
 			</ul>
 		</nav>
 	<div id="UPDATES">更新履歴</div>
-	<p>2026/XX/XX Copyright © 2026 okirkakutei All rights reserved.</p>
+	<p>2026/07/04 Copyright © 2026 okirakutei All rights reserved.</p>
 </body>
