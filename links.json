@@ -1,24 +1,38 @@
 {
-  "categories": [
-    {
-      "name": "気になるもの(優先度高)",
-      "links": [
-        {
-          "title": "サイト名",
-          "url": "https://example.com",
-          "description": "説明文"
-        }
-      ]
-    },
-    {
-      "name": "メジャー信頼層",
-      "links": [
-        {
-          "title": "サイト名",
-          "url": "https://example.com",
-          "description": "説明文"
-        }
-      ]
-    }
-  ]
+  "economy": {
+    "label": "経済",
+    "links": [
+      {
+        "title": "記事タイトル", 
+        "url": "...", 
+        "source": "...", 
+        "added": "YYYY-MM-DD", 
+        "note": "任意" 
+      }
+    ]
+  },
+  "world_news": {
+    "label": "国際ニュース", 
+    "links": [
+      
+    ] 
+  },
+  "study": {
+    "label": "学習", 
+    "links": [
+      
+    ] 
+  },
+  "ai_recommend": {
+    "label": "AIさんたちのおすすめ記事",
+    "links": [
+      { 
+        "title": "...", 
+        "url": "...", 
+        "recommended_by": "sone / copa / user", 
+        "added": "...", 
+        "context": "こんな会話から出てきた、程度の一言（任意）" 
+      }
+    ]
+  }
 }

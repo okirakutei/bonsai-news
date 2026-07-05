@@ -1,7 +1,24 @@
 {
-  "name": "ユーザー名",
+  "name": "okirakutei",
   "bio": "盆栽ニュース管理者",
-  "email": "your-email@example.com",
-  "github": "okirakutei",
-  "created": "2026-07-04"
+  "email": "test@example.com",
+  "created": "2026-07-05",
+  "updated": "2026-07-05"
+,
+  "案a":"最初の実装案",
+  "editable_by_ai": ["ai_recommend"],
+  "pinned": [
+    { "url": "...", "reason": "残したい理由（任意）" }
+  ]
+,
+  "案b":"思考の飛躍を恥じずに資産化。なんでこの記事を再現",
+  "url-b": "...",
+  "jumped_from": "いつ、何の話からどう飛躍したか",
+  "date": "..." 
+,
+  "案c":"繰り返し引っかかっている思考パターンを可視化",  
+  "pattern": ["エコvsアクセシビリティ", "AI労働倫理", "少数派vs多数派の設計思想"] 
+,
+  "案d":"まとめサイトばかり集めていないかをあとから検証用",
+  "url-d": { "type": "primary", "language": "original", "note": "..." } 
 }
