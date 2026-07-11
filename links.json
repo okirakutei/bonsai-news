@@ -1,37 +1,136 @@
 {
   "economy": {
-    "label": "経済",
+    "label": "経済関連",
     "links": [
       {
-        "title": "記事タイトル", 
-        "url": "...", 
-        "source": "...", 
-        "added": "YYYY-MM-DD", 
-        "note": "任意" 
+        "title": "株式マーケットデータ", 
+        "url": "https://stock-marketdata.com/(要暗号化)", 
+        "source": "金融情報サイト(ここは出典/要暗号化)",
+        "added": "2026-07-11", 
+        "note": {
+          "ciphertext": "Base64...(個人メモ要暗号化)",
+          "nonce": "Base64..."
+        }
+      },
+      {
+        "title": "ビットコインニュース", 
+        "url": "https://bitcoinmagazine.jp/", 
+        "source": "暗号通貨ニュースサイト(ここは出典)", 
+        "added": "2026-07-11", 
+        "note":{
+          "ciphertext": "ビットコインと暗号通貨に関する最新ニュースを提供するウェブサイト。" ,
+          "nonce": "Base64..."
+         } 
+      },
+      {
+        "title": "新しい経済", 
+        "url": "https://www.neweconomy.jp/", 
+        "source": "新しい経済ニュースサイト(ここは出典)", 
+        "added": "2026-07-11", 
+        "note": {
+          "ciphertext": "新しい経済に関する情報や分析を提供するウェブサイト。",
+          "nonce": "Base64..."
+        }
+      }
+      ,
+      {
+        "title": "TRADING HACK", 
+        "url": "https://tradinghack.net/", 
+        "source": "トレード情報サイト(ここは出典)", 
+        "added": "2026-07-11", 
+        "note": {
+          "ciphertext": "TRADING HACKは、株式やFXなどのトレードに関する情報を提供するウェブサイト。",
+          "nonce": "Base64..."
+        }
       }
     ]
   },
   "world_news": {
-    "label": "国際ニュース", 
+    "label": "メジャー信頼層・地域ニュース(国際)", 
     "links": [
-      
+      {
+        "title": "ロイターの記事(これはサンプル)", 
+        "url": "https://jp.reuters.com/", 
+        "source": "ロイター通信", 
+        "added": "2026-07-11", 
+        "note": {
+          "ciphertext": "ニュースの概要や重要なポイントを簡潔にまとめた説明文。",
+          "nonce": "Base64..."
+        }
+      }
+      ,
+      {
+        "title": "ブルームバーグ(これはサンプル)", 
+        "url": "https://www.bloomberg.com/jp", 
+        "source": "ブルームバーグ", 
+        "added": "2026-07-11", 
+        "note": {
+          "ciphertext": "ニュースの概要や重要なポイントを簡潔にまとめた説明文。",
+          "nonce": "Base64..."
+        }
+      }
+      ,
+      {
+        "title": "日経新聞(これはサンプル)", 
+        "url": "https://www.nikkei.com/", 
+        "source": "日経新聞", 
+        "added": "2026-07-11", 
+        "note": {
+          "ciphertext": "ニュースの概要や重要なポイントを簡潔にまとめた説明文。",
+          "nonce": "Base64..."
+        }
+      }
     ] 
   },
   "study": {
     "label": "学習", 
     "links": [
-      
+      {
+        "title": "統計の基礎", 
+        "url": "https://www.stat.go.jp/dss/getting/index.html", 
+        "source": "統計局", 
+        "added": "2026-07-11", 
+        "note": {
+          "ciphertext": "統計勉強用",
+          "nonce": "Base64..."
+        }
+      }
+      ,
+      {
+        "title": "カーン・アカデミー(これは自分のアカウントTOP)", 
+        "url": "https://en.khanacademy.org/profile/me/courses", 
+        "source": "カーン・アカデミー", 
+        "added": "2026-07-11", 
+        "note": {
+          "ciphertext": "いろいろな学問勉強用",
+          "nonce": "Base64..."
+        }
+      }
+      ,
+      {
+        "title": "Fast.aiのトップページ", 
+        "url": "https://www.fast.ai/", 
+        "source": "Fast.ai", 
+        "added": "2026-07-11", 
+        "note": {
+          "ciphertext": "ai関連の勉強用",
+          "nonce": "Base64..."
+        }
+      }
     ] 
   },
   "ai_recommend": {
     "label": "AIさんたちのおすすめ記事",
     "links": [
       { 
-        "title": "...", 
-        "url": "...", 
-        "recommended_by": "sone / copa / user", 
-        "added": "...", 
-        "context": "こんな会話から出てきた、程度の一言（任意）" 
+        "title": "おすすめ記事", 
+        "url": "https://example.com/recommended-article", 
+        "source": "おすすめ記事サイト", 
+        "added": "2026-07-11", 
+        "note": {
+          "ciphertext": "おすすめ記事の概要をまとめた説明文。",
+          "nonce": "Base64..."
+        }
       }
     ]
   }
