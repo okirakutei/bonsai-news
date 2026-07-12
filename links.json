@@ -45,7 +45,7 @@
       }
     ]
   },
-  "world_news": {
+  "trusted": {
     "label": "メジャー信頼層・地域ニュース(国際)", 
     "links": [
       {
@@ -120,15 +120,35 @@
     ] 
   },
   "ai_recommend": {
-    "label": "AIさんたちのおすすめ記事",
+    "label": "その他(AIさんたちのおすすめ記事)",
     "links": [
       { 
-        "title": "おすすめ記事", 
-        "url": "https://example.com/recommended-article", 
+        "title": "コパさんおすすめ記事", 
+        "url": "https://copilot.microsoft.com/", 
         "source": "おすすめ記事サイト", 
         "added": "2026-07-11", 
         "note": {
-          "ciphertext": "おすすめ記事の概要をまとめた説明文。",
+          "ciphertext":"おすすめ記事の概要をまとめた説明文。",
+          "nonce": "Base64..."
+        }
+      },
+      { 
+        "title": "クロさんおすすめ記事", 
+        "url": "https://claude.ai/login",
+        "source": "おすすめ記事サイト", 
+        "added": "2026-07-11", 
+        "note": {
+          "ciphertext":"おすすめ記事の概要をまとめた説明文。",
+          "nonce": "Base64..."
+        }
+      },
+      { 
+        "title": "ジェミニさんおすすめ記事", 
+        "url": "https://gemini.google.com/app", 
+        "source": "おすすめ記事サイト", 
+        "added": "2026-07-11", 
+        "note": {
+          "ciphertext":"おすすめ記事の概要をまとめた説明文。",
           "nonce": "Base64..."
         }
       }
