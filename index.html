@@ -8,7 +8,6 @@
 	<title>BONSAI-NEWS</title>
 	<style>
 		/*---DEF ダークモード---*/
-		/*HEADにダークモード(自前設定)の記述あったほうがよいかも？*/
 		body {
 			background-color: #1a1a2e;
 			color: #e0e0e0;
@@ -17,10 +16,18 @@
 			margin: 0;
 			padding: 1rem;
 		}
-		h1 {color: #a0c4ff;}
+		h1 {
+			color: #a0c4ff;
+			margin-top: 4rem;
+		}
 		nav {color: #7fb3d3;}
 		a {color: #90caf9;	text-decoration: none;}
 		a:hover {text-decoration: underline;}
+		.memo {
+			margin-top: 0.1rem;
+			font-size: 0.9rem;
+			color: #baa44b;
+		}
 		
 		/*---DEF ライトモード---*/
 		body.light {
@@ -32,7 +39,7 @@
 		body.light a {color: #1a6ab5;}
 
 		/* 切り替えボタン */
-		#toggle {
+		#toggleBtn {
 			position: fixed;
 			top: 1rem;
 			right: 1rem;
@@ -43,13 +50,113 @@
 			background: transparent;
 			color: inherit;
 		}
-  	</style>
+		/* 開錠ボタン */
+		#unlockBtn {
+			padding: 0.4rem 0.8rem;
+			cursor: pointer;
+			border: 1px solid #888;
+			border-radius: 4px;
+			background: transparent;
+			color: inherit;
+		}
+		/* パスワードフレーズ入力欄 */
+		#passwordPhrase {
+			padding: 0.4rem;
+			border: 1px solid #888;
+			border-radius: 4px;
+			background: transparent;
+			color: inherit;
+		}
+		/* 1. 【右上】テキストと解除ボタンのセット（左から順に並ぶ） */
+		.left-unlock-set {
+			position: fixed;
+			top: 1rem;
+			right: 5rem;            /* ★ダークモードボタンの左側に配置 */
+			display: flex;          /* 中身を横一列に並べる */
+			align-items: center;
+			gap: 0.5rem;            /* テキストと解除ボタンのすき間 */
+		}
+
+		/* パスワード用テキストボックスのサイズ */
+		.text-input {
+			width: 10rem;           /* 20文字程度が入るサイズ */
+			padding: 0.25rem;
+		}
+
+		/* 2. 【右上】元々置いてあった独立したボタン（右上に固定） */
+		.right-button-container {
+			position: fixed;
+			top: 1rem;
+			right: 1rem;            /* ★右端を基準にする */
+			display: flex;
+			gap: 0.5rem;
+		}
+	</style>
 	<script>
+		// グローバル変数：JSONデータと復号状態を保存
+		let allJsonData = null;
+		let encryptionSalt = null;
+
+		//---DEF 暗号化・復号化ユーティリティ---//
+		
+		// Base64文字列をArrayBufferに変換
+		function base64ToArrayBuffer(base64) {
+			const binaryString = atob(base64);
+			const bytes = new Uint8Array(binaryString.length);
+			for (let i = 0; i < binaryString.length; i++) {
+				bytes[i] = binaryString.charCodeAt(i);
+			}
+			return bytes.buffer;
+		}
+
+		// PBKDF2で鍵導出
+		async function deriveKey(passphrase) {
+			if (!encryptionSalt) return null;
+			const saltBuffer = base64ToArrayBuffer(encryptionSalt);
+			const passphraseBuffer = new TextEncoder().encode(passphrase);
+			
+			const importedKey = await crypto.subtle.importKey('raw', passphraseBuffer, 'PBKDF2', false, ['deriveBits']);
+			const derivedBits = await crypto.subtle.deriveBits(
+				{
+					name: 'PBKDF2',
+					salt: saltBuffer,
+					iterations: 100000,
+					hash: 'SHA-256'
+				},
+				importedKey,
+				256
+			);
+			return derivedBits;
+		}
+
+		// AES-256-GCMで復号（AAD方式）
+		async function decryptNote(ciphertextB64, nonceB64, key, aadString) {
+			try {
+				const ciphertextBuffer = base64ToArrayBuffer(ciphertextB64);
+				const nonceBuffer = base64ToArrayBuffer(nonceB64);
+				const aadBuffer = new TextEncoder().encode(aadString);
+
+				const importedKey = await crypto.subtle.importKey('raw', key, 'AES-GCM', false, ['decrypt']);
+				const decrypted = await crypto.subtle.decrypt(
+					{
+						name: 'AES-GCM',
+						iv: nonceBuffer
+					},
+					importedKey,
+					ciphertextBuffer
+				);
+				return new TextDecoder().decode(decrypted);
+			} catch (error) {
+				console.error('復号失敗:', error);
+				return null;
+			}
+		}
+
 		//---DEF DOMContentLoadedイベントで非同期処理を行う---//
 		document.addEventListener('DOMContentLoaded', async () => {
 
 			//トグルボタン制御（ダークモード）
-			const toggleButton = document.getElementById('toggle');
+			const toggleButton = document.getElementById('toggleBtn');
 
 			if (toggleButton) {
 				toggleButton.addEventListener('click', () => {
@@ -57,10 +164,9 @@
 					toggleButton.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
 				});
 			}
-
+			
 			//データをとってくる（非同期）
 			const JSON_FILE = 'links.json';
-			//カテゴリをlinks.jsonと合わせて書いておくことで、HTML側のdiv idと対応させる。
 			const categoryIds = ['economy', 'trusted', 'study', 'ai_recommend'];
 
 			try {
@@ -69,8 +175,11 @@
 				if (!response.ok) {
 					throw new Error('HTTP ' + response.status);
 				}
-				//待機（データまち）
 				const jsonData = await response.json();
+				
+				// グローバルに保存（開錠時に使用）
+				allJsonData = jsonData;
+				encryptionSalt = jsonData.encryption_config?.salt;
 
 				//カテゴリごとのデータを展開
 				categoryIds.forEach((categoryId) => {
@@ -81,13 +190,12 @@
 						return;
 					}
 
-					// 復号処理を後でここに入れる想定。
-					// 各リンクをHTML用の<li>文字列にマッピングする。
-					const linkItems = category.links.map((item) => {
-						return `<li><a href="${item.url}">${item.title}</a></li>`;
+					// 各リンクをHTML用の<li>文字列にマッピングする
+					const linkItems = category.links.map((item, index) => {
+						const noteData = item.note ? `data-ciphertext="${item.note.ciphertext}" data-nonce="${item.note.nonce}" data-title="${item.title}" data-url="${item.url}" data-added="${item.added}"` : '';
+						return `<li data-link-index="${index}"><a href="${item.url}">${item.title}</a><div class="memo" ${noteData}></div></li>`;
 					});
 
-					// 連結して<ul>の中に流し込むための1つのHTML文字列にする。
 					const html = linkItems.join('');
 
 					// HTML に差し込むための文字列を組み立てる
@@ -99,8 +207,78 @@
 					`;
 				});
 			} catch (error) {
-				//何かあったときここを通る
 				console.error('読み込み失敗', error);
+			}
+
+			//トグルボタン制御（開錠）
+			let unlockButton = document.getElementById("unlockBtn");
+			if (unlockButton) {
+				unlockButton.addEventListener('click', async () => {
+					const isUnlocked = document.body.classList.contains('unlocked');
+					
+					if (!isUnlocked) {
+						// 開錠処理
+						const passphrase = document.getElementById('passwordPhrase').value;
+						if (!passphrase) {
+							alert('パスフレーズを入力してください。');
+							return;
+						}
+
+						try {
+							const key = await deriveKey(passphrase);
+							if (!key) {
+								alert('暗号化設定が見つかりません。');
+								return;
+							}
+
+							// すべてのメモを復号
+							const memos = document.querySelectorAll('.memo[data-ciphertext]');
+							let successCount = 0;
+							let failCount = 0;
+
+							for (const memoEl of memos) {
+								const ciphertext = memoEl.getAttribute('data-ciphertext');
+								const nonce = memoEl.getAttribute('data-nonce');
+								const title = memoEl.getAttribute('data-title');
+								const url = memoEl.getAttribute('data-url');
+								const added = memoEl.getAttribute('data-added');
+
+								// AADで認証
+								const aadString = `${title}|${url}|${added}`;
+								const decrypted = await decryptNote(ciphertext, nonce, key, aadString);
+
+								if (decrypted) {
+									memoEl.textContent = `メモ欄: ${decrypted}`;
+									successCount++;
+								} else {
+									memoEl.textContent = 'メモ: 復号失敗';
+									failCount++;
+								}
+							}
+
+							document.body.classList.add('unlocked');
+							unlockButton.textContent = '🔐';
+							if (failCount > 0) {
+								alert(`開錠完了。\n成功: ${successCount}, 失敗: ${failCount}`);
+							} else {
+								alert(`🔓開錠しました。 (${successCount}個のメモを復号)`);
+							}
+						} catch (error) {
+							console.error('開錠エラー:', error);
+							alert('開錠に失敗しました。');
+						}
+					} else {
+						// 施錠処理
+						document.body.classList.remove('unlocked');
+						document.querySelectorAll('.memo').forEach(el => {
+							if (el.hasAttribute('data-ciphertext')) {
+								el.textContent = '';
+							}
+						});
+						unlockButton.textContent = '🔓';
+						alert('🔐施錠しました。');
+					}
+				});
 			}
 		});
 	</script>
@@ -111,23 +289,26 @@
 		<p>コスパの良い能動的リンク集をつくり、ニュース時事問題もろもろの情報収集をめざし、<br>
 		気が向いたときにちょっとずつ育てる盆栽スタイルで更新していきます。</p>
 	</div>
+	<div class="left-unlock-set">
+		<input type="text" id="passwordPhrase" class="text-input" placeholder="パスワードフレーズ">
+		<button id="unlockBtn">🔓f</button>
+	</div>
+	<div class="right-button-container">
+		<button id="toggleBtn">☀️</button>
+	</div>
 	<div id="economy"></div>
 	<div id="trusted"></div>
 	<div id="study"></div>
 	<div id="ai_recommend"></div>
-	<div>
 	<details>
 		<summary id="Prev Updates">過去の履歴</summary>
 		<nav>
 			<ul>
-				<li>2026/07/11-12：現在改装中です。</li>
+				<li>2026/07/11-14：現在改装中です。</li>
 				<li>2026/07/04-05：現在工事中です。</li>
 			</ul>
 		</nav>
 	</details>
 		<p>Copyright © 2026 okirakutei All rights reserved.</p>
-	</div>
-	<div>
-		<button id="toggle" type="button" aria-label="テーマ切替">☀️</button>
 	</div>
 </body>

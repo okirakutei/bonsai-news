@@ -1,46 +1,51 @@
 {
+  "encryption_config": {
+    "salt": "6Wwf+cWwAk9HPpx6+TLyKw=="
+  },
   "economy": {
     "label": "経済関連",
     "links": [
       {
         "title": "株式マーケットデータ", 
-        "url": "https://stock-marketdata.com/(要暗号化)", 
-        "source": "金融情報サイト(ここは出典/要暗号化)",
+        "url": "https://stock-marketdata.com/", 
+        "source": "金融情報サイト",
         "added": "2026-07-11", 
         "note": {
-          "ciphertext": "Base64...(個人メモ要暗号化)",
-          "nonce": "Base64..."
+          "ciphertext": "2lvNq2Z9cqfMhvJO4O03OBY0Xmh2eP8TyIQl9GVIkwlWWVq8mUHcjiFU3RPeQl94ir+Rgw==",
+          "nonce": "2rDCkRGIDKAoh+ji"
         }
       },
       {
         "title": "ビットコインニュース", 
         "url": "https://bitcoinmagazine.jp/", 
-        "source": "暗号通貨ニュースサイト(ここは出典)", 
+        "source": "暗号通貨ニュースサイト", 
         "added": "2026-07-11", 
         "note":{
-          "ciphertext": "ビットコインと暗号通貨に関する最新ニュースを提供するウェブサイト。" ,
-          "nonce": "Base64..."
+          "ciphertext": "1MbcsXP+Hbz/omt07j3607jV+ERDlGs0Czq7BRxWiCCSp2VRrxxZ2DyKcntaFtegs5X6mhvTJwwJQgV97rR1lw==",
+          "nonce": "2rDCkRGIDKAoh+ji" 
          } 
       },
       {
         "title": "新しい経済", 
         "url": "https://www.neweconomy.jp/", 
-        "source": "新しい経済ニュースサイト(ここは出典)", 
+        "source": "新しい経済ニュースサイト", 
         "added": "2026-07-11", 
         "note": {
-          "ciphertext": "新しい経済に関する情報や分析を提供するウェブサイト。",
-          "nonce": "Base64..."
+          "ciphertext": "rRgzapsvrzB7gHHdDiZ73OzbhX7pjPmn2Q8F9rVLGnS/HBgANVW8WDDIpaql8eVNndKlgXrCPc6x8btAH7DXtuNwyDHVNhQVMFIXDaMyda0ywZ3kKhPs8imeDGiehw==",
+          "nonce" : "3GwIAtI5CettTIOf"
+
         }
       }
       ,
       {
         "title": "TRADING HACK", 
         "url": "https://tradinghack.net/", 
-        "source": "トレード情報サイト(ここは出典)", 
+        "source": "トレード情報サイト", 
         "added": "2026-07-11", 
         "note": {
-          "ciphertext": "TRADING HACKは、株式やFXなどのトレードに関する情報を提供するウェブサイト。",
-          "nonce": "Base64..."
+          "ciphertext": "tH+MCYcZpJFGjYLOvdi2OIBJETvnRoWMckwjZDcDGJiLJlAwCrHibisuM72YGYBrhFXWPUEH8A10VB8sVW+McbERI/zO3o1e1SZGJ5oGg5YTt40pgAjUrt3kMk1mNil2gkzgj7FkXAwjdE+w6O6AMEUURkOYVJXs",
+          "nonce" : "6r3ViYeg8a3vH4Gs"
+
         }
       }
     ]
@@ -49,35 +54,35 @@
     "label": "メジャー信頼層・地域ニュース(国際)", 
     "links": [
       {
-        "title": "ロイターの記事(これはサンプル)", 
+        "title": "ロイターTOPページ", 
         "url": "https://jp.reuters.com/", 
         "source": "ロイター通信", 
         "added": "2026-07-11", 
         "note": {
-          "ciphertext": "ニュースの概要や重要なポイントを簡潔にまとめた説明文。",
-          "nonce": "Base64..."
+          "ciphertext": "fyDlryF06ifN/apvPC9LKiGRx1vLb9sGkeFNyW8mCbjGOVJPywc7rHCaAyPJHbqmH8fT7OXpPuMTI1InCX7D+tx1PJZ2uzO9crTVy1bDpVVnZE4p+i7d4giEiPjq7+ES3Q==",
+          "nonce" : "zwirRnRbvOpe3VQ1"
         }
       }
       ,
       {
-        "title": "ブルームバーグ(これはサンプル)", 
+        "title": "ブルームバーグTOPページ", 
         "url": "https://www.bloomberg.com/jp", 
         "source": "ブルームバーグ", 
         "added": "2026-07-11", 
         "note": {
-          "ciphertext": "ニュースの概要や重要なポイントを簡潔にまとめた説明文。",
-          "nonce": "Base64..."
+          "ciphertext": "fyDlryF06ifN/apvPC9LKiGRx1vLb9sGkeFNyW8mCbjGOVJPywc7rHCaAyPJHbqmH8fT7OXpPuMTI1InCX7D+tx1PJZ2uzO9crTVy1bDpVVnZE4p+i7d4giEiPjq7+ES3Q==",
+          "nonce" : "zwirRnRbvOpe3VQ1"
         }
       }
       ,
       {
-        "title": "日経新聞(これはサンプル)", 
+        "title": "日経新聞TOPページ", 
         "url": "https://www.nikkei.com/", 
         "source": "日経新聞", 
         "added": "2026-07-11", 
         "note": {
-          "ciphertext": "ニュースの概要や重要なポイントを簡潔にまとめた説明文。",
-          "nonce": "Base64..."
+          "ciphertext": "fyDlryF06ifN/apvPC9LKiGRx1vLb9sGkeFNyW8mCbjGOVJPywc7rHCaAyPJHbqmH8fT7OXpPuMTI1InCX7D+tx1PJZ2uzO9crTVy1bDpVVnZE4p+i7d4giEiPjq7+ES3Q==",
+          "nonce" : "zwirRnRbvOpe3VQ1"
         }
       }
     ] 
@@ -91,19 +96,18 @@
         "source": "統計局", 
         "added": "2026-07-11", 
         "note": {
-          "ciphertext": "統計勉強用",
-          "nonce": "Base64..."
-        }
+        "ciphertext": "vroyvvleCv9T1dGCuBSEtFpw8MisZOmvwoUr0g==",
+        "nonce" : "H5SBEyh4d1ajNrOb"        }
       }
       ,
       {
-        "title": "カーン・アカデミー(これは自分のアカウントTOP)", 
+        "title": "カーン・アカデミーのコース一覧", 
         "url": "https://en.khanacademy.org/profile/me/courses", 
         "source": "カーン・アカデミー", 
         "added": "2026-07-11", 
         "note": {
-          "ciphertext": "いろいろな学問勉強用",
-          "nonce": "Base64..."
+          "ciphertext": "+Irw2UCJMjumO7TD9RRDf5/jpNJqWpArCOmFNg==",
+          "nonce" : "DXgllPUQ8DZN2Dz1"
         }
       }
       ,
@@ -113,8 +117,8 @@
         "source": "Fast.ai", 
         "added": "2026-07-11", 
         "note": {
-          "ciphertext": "ai関連の勉強用",
-          "nonce": "Base64..."
+          "ciphertext": "b76M5cF2El/hwrHCQWek/e21b05XySIbr2rn8Q==",
+          "nonce" : "xt8zWxc/GD7rQVta"
         }
       }
     ] 
@@ -128,8 +132,8 @@
         "source": "おすすめ記事サイト", 
         "added": "2026-07-11", 
         "note": {
-          "ciphertext":"おすすめ記事の概要をまとめた説明文。",
-          "nonce": "Base64..."
+          "ciphertext": "RVH1LqhL2o3tzfRC5Xf/Hyz5yTM6qWXuwkvcdkyaEnwd3Axc4vDmIqjR2bYf5Wbgrau0zFrb74YB//vgMBbA76NVKUOV0Q==",
+          "nonce" : "v5+qypfRs9WJZtu5"
         }
       },
       { 
@@ -138,8 +142,8 @@
         "source": "おすすめ記事サイト", 
         "added": "2026-07-11", 
         "note": {
-          "ciphertext":"おすすめ記事の概要をまとめた説明文。",
-          "nonce": "Base64..."
+          "ciphertext": "RVH1LqhL2o3tzfRC5Xf/Hyz5yTM6qWXuwkvcdkyaEnwd3Axc4vDmIqjR2bYf5Wbgrau0zFrb74YB//vgMBbA76NVKUOV0Q==",
+          "nonce" : "v5+qypfRs9WJZtu5"
         }
       },
       { 
@@ -148,8 +152,8 @@
         "source": "おすすめ記事サイト", 
         "added": "2026-07-11", 
         "note": {
-          "ciphertext":"おすすめ記事の概要をまとめた説明文。",
-          "nonce": "Base64..."
+          "ciphertext": "RVH1LqhL2o3tzfRC5Xf/Hyz5yTM6qWXuwkvcdkyaEnwd3Axc4vDmIqjR2bYf5Wbgrau0zFrb74YB//vgMBbA76NVKUOV0Q==",
+          "nonce" : "v5+qypfRs9WJZtu5"
         }
       }
     ]
