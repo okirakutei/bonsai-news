@@ -9,7 +9,7 @@
       "source": "出典",
       "added": "2026-07-20",
       "note": {
-        "ciphertext": "Base64暗号文",
+        "ciphertext": "このファイルはローカルで管理してください。暗号化されているため、外部に公開しないでください。",
         "nonce": "Base64（12バイト）"
       },
       "contributed_by": "copa"
