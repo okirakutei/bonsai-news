@@ -1,21 +1,18 @@
 {
+  "name": "xxxx",
   "editable_by_ai": ["ai_recommend"],
-  "pinned": [
+  "last_updated": "2026-07-20",
+  "weekly_contributions": [
     {
-      "title": "〇〇について書いた記事",
-      "url": {
+      "title": "タイトル",
+      "url": "https://example.com/article",
+      "source": "出典",
+      "added": "2026-07-20",
+      "note": {
         "ciphertext": "Base64暗号文",
         "nonce": "Base64（12バイト）"
       },
-      "source": {
-        "ciphertext": "Base64暗号文",
-        "nonce": "Base64（12バイト）"
-      },
-      "added": "yyyy-mm-dd",
-      "reason": {
-        "ciphertext": "Base64暗号文",
-        "nonce": "Base64（12バイト）"
-      }
+      "contributed_by": "copa"
     }
   ]
 }
