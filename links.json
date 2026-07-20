@@ -1,4 +1,4 @@
-{
+﻿{
   "encryption_config": {
     "salt": "6Wwf+cWwAk9HPpx6+TLyKw=="
   },
@@ -6,155 +6,162 @@
     "label": "経済関連",
     "links": [
       {
-        "title": "株式マーケットデータ", 
-        "url": "https://stock-marketdata.com/", 
+        "title": "株式マーケットデータ",
+        "url": "https://stock-marketdata.com/",
         "source": "金融情報サイト",
-        "added": "2026-07-11", 
+        "added": "2026-07-11",
         "note": {
-          "ciphertext": "2lvNq2Z9cqfMhvJO4O03OBY0Xmh2eP8TyIQl9GVIkwlWWVq8mUHcjiFU3RPeQl94ir+Rgw==",
-          "nonce": "2rDCkRGIDKAoh+ji"
-        }
+          "ciphertext": "jltKaC1yQiETE1y63Xic6Wr62h9stEaASEyZqkrbMFnGrBGNgtk=",
+          "nonce": "5HBNXncg8MDcI7cz"
+        },
+        "contributed_by": "me"
       },
       {
-        "title": "ビットコインニュース", 
-        "url": "https://bitcoinmagazine.jp/", 
-        "source": "暗号通貨ニュースサイト", 
-        "added": "2026-07-11", 
-        "note":{
-          "ciphertext": "1MbcsXP+Hbz/omt07j3607jV+ERDlGs0Czq7BRxWiCCSp2VRrxxZ2DyKcntaFtegs5X6mhvTJwwJQgV97rR1lw==",
-          "nonce": "2rDCkRGIDKAoh+ji" 
-         } 
+        "title": "ビットコインニュース",
+        "url": "https://bitcoinmagazine.jp/",
+        "source": "暗号通貨ニュースサイト",
+        "added": "2026-07-11",
+        "note": {
+          "ciphertext": "rSYmRUYJFcpJS/fjmbnOzyU8JIuNAhpa0CdQHI06dlH1tHLx/kg=",
+          "nonce": "ade56VjBlO6K+BkM"
+        },
+        "contributed_by": "me"
       },
       {
-        "title": "新しい経済", 
-        "url": "https://www.neweconomy.jp/", 
-        "source": "新しい経済ニュースサイト", 
-        "added": "2026-07-11", 
+        "title": "新しい経済",
+        "url": "https://www.neweconomy.jp/",
+        "source": "新しい経済ニュースサイト",
+        "added": "2026-07-11",
         "note": {
-          "ciphertext": "rRgzapsvrzB7gHHdDiZ73OzbhX7pjPmn2Q8F9rVLGnS/HBgANVW8WDDIpaql8eVNndKlgXrCPc6x8btAH7DXtuNwyDHVNhQVMFIXDaMyda0ywZ3kKhPs8imeDGiehw==",
-          "nonce" : "3GwIAtI5CettTIOf"
-
-        }
-      }
-      ,
+          "ciphertext": "HqhwgfSXMIaqDvKDjpUYdtWQ3bF6WmyTD4Tm84UjknfO5v2YHBM=",
+          "nonce": "3YBIQD94T8D1+JPc"
+        },
+        "contributed_by": "me"
+      },
       {
-        "title": "TRADING HACK", 
-        "url": "https://tradinghack.net/", 
-        "source": "トレード情報サイト", 
-        "added": "2026-07-11", 
+        "title": "TRADING HACK",
+        "url": "https://tradinghack.net/",
+        "source": "トレード情報サイト",
+        "added": "2026-07-11",
         "note": {
-          "ciphertext": "tH+MCYcZpJFGjYLOvdi2OIBJETvnRoWMckwjZDcDGJiLJlAwCrHibisuM72YGYBrhFXWPUEH8A10VB8sVW+McbERI/zO3o1e1SZGJ5oGg5YTt40pgAjUrt3kMk1mNil2gkzgj7FkXAwjdE+w6O6AMEUURkOYVJXs",
-          "nonce" : "6r3ViYeg8a3vH4Gs"
-
-        }
+          "ciphertext": "OQTV20wikAlR2Fw2D/ECRUANlImXdUqJy2TCkUW+5xkS8r6bKdM=",
+          "nonce": "8SkXpJnmtT8xmyDh"
+        },
+        "contributed_by": "me"
       }
     ]
   },
   "trusted": {
-    "label": "メジャー信頼層・地域ニュース(国際)", 
+    "label": "メジャー信頼層・地域ニュース(国際)",
     "links": [
       {
-        "title": "ロイターTOPページ", 
-        "url": "https://jp.reuters.com/", 
-        "source": "ロイター通信", 
-        "added": "2026-07-11", 
+        "title": "ロイターTOPページ",
+        "url": "https://jp.reuters.com/",
+        "source": "ロイター通信",
+        "added": "2026-07-11",
         "note": {
-          "ciphertext": "fyDlryF06ifN/apvPC9LKiGRx1vLb9sGkeFNyW8mCbjGOVJPywc7rHCaAyPJHbqmH8fT7OXpPuMTI1InCX7D+tx1PJZ2uzO9crTVy1bDpVVnZE4p+i7d4giEiPjq7+ES3Q==",
-          "nonce" : "zwirRnRbvOpe3VQ1"
-        }
-      }
-      ,
+          "ciphertext": "rxdeJexH6c3sCBUn3PiaTbRIN1FOdcuQT1I6CC/qcGj/Ew29gaw=",
+          "nonce": "rvpT11RULxRBrW/6"
+        },
+        "contributed_by": "me"
+      },
       {
-        "title": "ブルームバーグTOPページ", 
-        "url": "https://www.bloomberg.com/jp", 
-        "source": "ブルームバーグ", 
-        "added": "2026-07-11", 
+        "title": "ブルームバーグTOPページ",
+        "url": "https://www.bloomberg.com/jp",
+        "source": "ブルームバーグ",
+        "added": "2026-07-11",
         "note": {
-          "ciphertext": "fyDlryF06ifN/apvPC9LKiGRx1vLb9sGkeFNyW8mCbjGOVJPywc7rHCaAyPJHbqmH8fT7OXpPuMTI1InCX7D+tx1PJZ2uzO9crTVy1bDpVVnZE4p+i7d4giEiPjq7+ES3Q==",
-          "nonce" : "zwirRnRbvOpe3VQ1"
-        }
-      }
-      ,
+          "ciphertext": "p9WyteJTG4PKe59FArRCoBDysx/Pp3p3HrO9HpJ+L9DroyRaLeg=",
+          "nonce": "b/8tCy+BwF2rpN9P"
+        },
+        "contributed_by": "me"
+      },
       {
-        "title": "日経新聞TOPページ", 
-        "url": "https://www.nikkei.com/", 
-        "source": "日経新聞", 
-        "added": "2026-07-11", 
+        "title": "日経新聞TOPページ",
+        "url": "https://www.nikkei.com/",
+        "source": "日経新聞",
+        "added": "2026-07-11",
         "note": {
-          "ciphertext": "fyDlryF06ifN/apvPC9LKiGRx1vLb9sGkeFNyW8mCbjGOVJPywc7rHCaAyPJHbqmH8fT7OXpPuMTI1InCX7D+tx1PJZ2uzO9crTVy1bDpVVnZE4p+i7d4giEiPjq7+ES3Q==",
-          "nonce" : "zwirRnRbvOpe3VQ1"
-        }
+          "ciphertext": "vzBPwRXHpovPdYnxkJSVxu/lqKTjgGHlJGX3AukDhR82U3EBzuM=",
+          "nonce": "KVh8sH4Uqxi1SwHF"
+        },
+        "contributed_by": "me"
       }
-    ] 
+    ]
   },
   "study": {
-    "label": "学習", 
+    "label": "学習",
     "links": [
       {
-        "title": "統計の基礎", 
-        "url": "https://www.stat.go.jp/dss/getting/index.html", 
-        "source": "統計局", 
-        "added": "2026-07-11", 
+        "title": "統計の基礎",
+        "url": "https://www.stat.go.jp/dss/getting/index.html",
+        "source": "統計局",
+        "added": "2026-07-11",
         "note": {
-        "ciphertext": "vroyvvleCv9T1dGCuBSEtFpw8MisZOmvwoUr0g==",
-        "nonce" : "H5SBEyh4d1ajNrOb"        }
-      }
-      ,
+          "ciphertext": "N3XFWGMgxGKI2JEqybC5zjS6HsHdDZJadxzYpak1YqXUDA7PhKc=",
+          "nonce": "6Be/XnJM3MMJhdet"
+        },
+        "contributed_by": "me"
+      },
       {
-        "title": "カーン・アカデミーのコース一覧", 
-        "url": "https://en.khanacademy.org/profile/me/courses", 
-        "source": "カーン・アカデミー", 
-        "added": "2026-07-11", 
+        "title": "カーン・アカデミーのコース一覧",
+        "url": "https://en.khanacademy.org/profile/me/courses",
+        "source": "カーン・アカデミー",
+        "added": "2026-07-11",
         "note": {
-          "ciphertext": "+Irw2UCJMjumO7TD9RRDf5/jpNJqWpArCOmFNg==",
-          "nonce" : "DXgllPUQ8DZN2Dz1"
-        }
-      }
-      ,
+          "ciphertext": "ws5oI1YLl0SOFVkhYvjlfEfPdk2nFX2qW34mrXnJFcsnQHcBiK4=",
+          "nonce": "hFiYP0qCgrnyfqzV"
+        },
+        "contributed_by": "me"
+      },
       {
-        "title": "Fast.aiのトップページ", 
-        "url": "https://www.fast.ai/", 
-        "source": "Fast.ai", 
-        "added": "2026-07-11", 
+        "title": "Fast.aiのトップページ",
+        "url": "https://www.fast.ai/",
+        "source": "Fast.ai",
+        "added": "2026-07-11",
         "note": {
-          "ciphertext": "b76M5cF2El/hwrHCQWek/e21b05XySIbr2rn8Q==",
-          "nonce" : "xt8zWxc/GD7rQVta"
-        }
+          "ciphertext": "mupdGgKiNxDiw4vLG7w5OsYNBDHbG3bPXAfF04Vp1Y6mbQV6bpuH",
+          "nonce": "ufcEoSx7uRG/8RPd"
+        },
+        "contributed_by": "me"
       }
-    ] 
+    ]
   },
   "ai_recommend": {
     "label": "その他(AIさんたちのおすすめ記事)",
     "links": [
-      { 
-        "title": "コパさんおすすめ記事", 
-        "url": "https://copilot.microsoft.com/", 
-        "source": "おすすめ記事サイト", 
-        "added": "2026-07-11", 
+      {
+        "title": "新しいタイトル",
+        "url": "https://example.com/article",
+        "source": "出典",
+        "added": "2026-07-20",
         "note": {
-          "ciphertext": "RVH1LqhL2o3tzfRC5Xf/Hyz5yTM6qWXuwkvcdkyaEnwd3Axc4vDmIqjR2bYf5Wbgrau0zFrb74YB//vgMBbA76NVKUOV0Q==",
-          "nonce" : "v5+qypfRs9WJZtu5"
-        }
+          "ciphertext": "junJ4z4pruYRXEUxJswEMj59x8B1ophJcNYNrNSRbW6UjHc+4I+/NBsiRo+G+8+mDg==",
+          "nonce": "E54HUyBilUGzMNvJ"
+        },
+        "contributed_by": "copa"
       },
-      { 
-        "title": "クロさんおすすめ記事", 
-        "url": "https://claude.ai/login",
-        "source": "おすすめ記事サイト", 
-        "added": "2026-07-11", 
+      {
+        "title": "新しいタイトル",
+        "url": "https://example.com/article",
+        "source": "出典",
+        "added": "2026-07-20",
         "note": {
-          "ciphertext": "RVH1LqhL2o3tzfRC5Xf/Hyz5yTM6qWXuwkvcdkyaEnwd3Axc4vDmIqjR2bYf5Wbgrau0zFrb74YB//vgMBbA76NVKUOV0Q==",
-          "nonce" : "v5+qypfRs9WJZtu5"
-        }
+          "ciphertext": "UJEa/7OFoQYzUo5bZsKw/j5BmFi9VQLcVtw5mN5oaM0g3S/HXLJC5vq85GKw0xpF2g==",
+          "nonce": "x7E2O+gRX3aQU0/l"
+        },
+        "contributed_by": "copa"
       },
-      { 
-        "title": "ジェミニさんおすすめ記事", 
-        "url": "https://gemini.google.com/app", 
-        "source": "おすすめ記事サイト", 
-        "added": "2026-07-11", 
+      {
+        "title": "新しいタイトル",
+        "url": "https://example.com/article",
+        "source": "出典",
+        "added": "2026-07-20",
         "note": {
-          "ciphertext": "RVH1LqhL2o3tzfRC5Xf/Hyz5yTM6qWXuwkvcdkyaEnwd3Axc4vDmIqjR2bYf5Wbgrau0zFrb74YB//vgMBbA76NVKUOV0Q==",
-          "nonce" : "v5+qypfRs9WJZtu5"
-        }
+          "ciphertext": "FFktlD0iyewA9AZWuv5Prn/6AzeWI5LMDMqCkZyrPg4SPy/MSIf1DIqsCb/e+Tgk6mhHgg==",
+          "nonce": "CIX+O3lTqayTuPTp"
+        },
+        "contributed_by": "copa"
       }
     ]
   }
